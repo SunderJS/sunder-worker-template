@@ -1,0 +1,33 @@
+{
+    "name": "sunder-starter",
+    "version": "0.1.0",
+    "license": "MIT",
+    "private": true,
+    "description": "A starter template for Sunder applications on Cloudflare Workers",
+    "scripts": {
+        "build": "rimraf dist && node build.js -sourcemap",
+        "watch": "rimraf dist && node build.js -watch -sourcemap -debug",
+        "test": "jest",
+        "prepublishOnly": "npm i && npm run build && npm t"
+    },
+    "main": "dist/worker.js",
+    "devDependencies": {
+        "@popeindustries/lit-html-server": "^3.1.0",
+        "@types/node": "^14.14.10",
+        "@types/node-fetch": "^2.5.7",
+        "@udacity/types-service-worker-mock": "^1.2.0",
+        "cloudflare-worker-mock": "^1.2.0",
+        "esbuild": "^0.8.18",
+        "estrella": "^1.2.10",
+        "formdata-node": "^2.4.0",
+        "jest": "^26.6.3",
+        "node-fetch": "^2.6.1",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^26.4.4",
+        "types-cloudflare-worker": "^1.2.0",
+        "typescript": "^4.1.2"
+    },
+    "dependencies": {
+        "sunder": "^0.5.3"
+    }
+}
