@@ -2,20 +2,16 @@
 
 A batteries-included template for [Cloudflare Workers](https://workers.cloudflare.com) with the following modern configuration:
 
-* Uses the [Sunder](https://sunderjs.com) minimal web framework.
-* ESBuild for builds in <50ms.
-* Typescript for typechecking.
-* Jest for testing.
+* The [Sunder](https://sunderjs.com) minimal web framework.
+* [ESBuild](https://esbuild.github.io/) for builds in <50ms.
+* [Typescript](https://www.typescriptlang.org/) for typechecking.
+* [Jest](https://jestjs.io/) for testing.
+* [Sass](https://sass-lang.com/) for CSS preprocessing and minification.
+* Static files are served using [Cloudflare Sites](https://developers.cloudflare.com/workers/platform/sites).
 
 ## 🚀 Getting started
 
 Press the green *"Use this template"* button in the top right to make a Github repository based on this one.
-
-**Alternative**
-
-```
-wrangler generate my-project https://github.com/gzuidhof/sunder-worker-template
-```
 
 ## Development
 
@@ -24,13 +20,20 @@ To watch changes and build as you go, use
 npm run watch
 ```
 
-## Testing
+### Testing
 
 The tests are run using Jest. Use `npm test` to run your tests.
 
+To re-run the tests on changes run
+```
+npm test -- --watch
+```
+
+This is the recommended way to develop most of your app. Write tests for core functionality instead of relying on `wrangler dev`.
+
 > ⚠️ Jest runs tests in a Node environment, this template has polyfills that make this environment as close as possible to a normal Cloudflare environment, but it may still be slightly different.
 
-## Previewing and Publishing
+### Previewing and Publishing
 ```
 wrangler dev
 ```

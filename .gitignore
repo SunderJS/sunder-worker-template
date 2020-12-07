@@ -8,7 +8,9 @@ jspm_packages/
 # Optional eslint cache
 .eslintcache
 
+# You can remove this, used for development of the template
+wrangler.toml
+
 build/
 dist/
-
-wrangler.toml
+worker/

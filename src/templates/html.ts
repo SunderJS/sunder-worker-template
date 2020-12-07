@@ -7,7 +7,7 @@ export interface HTMLTemplateData {
 }
 
 // A very basic HTML Template - do change or extend this.
-export function htmlTemplate(data: HTMLTemplateData) {
+export function htmlDocumentTemplate(data: HTMLTemplateData) {
 
     return html`<!DOCTYPE html>
 <html>

@@ -1,16 +1,22 @@
 import { Context } from "sunder";
 import { html, renderToString } from "@popeindustries/lit-html-server";
 
-import { htmlTemplate, HTMLTemplateData } from "../templates/html";
+import { htmlDocumentTemplate, HTMLTemplateData } from "../templates/html";
+import { basicLayout } from "../templates/layout";
 
 export async function homeHandler(ctx: Context) {
     const pageData: HTMLTemplateData = {
-        title: "Sunder Worker Template",
+        title: "Sunder Starter App",
         body: html`
-            <h1>Sunder Worker Template</h1>
-            Hello!
-        `,
-    }
+            <p>Welcome to the <strong>Sunder</strong> Starter template.</p>
 
-    ctx.response.body = await renderToString(htmlTemplate(pageData));
+            <blockquote>
+                <p>
+                    Edit this template in <code>src/handlers/home.ts</code>
+                </p>
+            </blockquote>
+        `,
+    };
+    const templateResult = htmlDocumentTemplate(basicLayout(pageData));
+    ctx.response.body = await renderToString(templateResult);
 }

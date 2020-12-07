@@ -1,0 +1,11 @@
+type = "javascript"
+name = "sunder-starter"
+account_id = ""
+workers_dev = true
+zone_id = ""
+webpack_config = "webpack.config.js"
+
+
+[site]
+entry-point = "./"
+bucket = "./dist/static"
