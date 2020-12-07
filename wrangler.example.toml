@@ -1,5 +1,5 @@
 type = "javascript"
-name = "sunder-starter"
+name = "{{ project-name }}"
 account_id = ""
 workers_dev = true
 zone_id = ""

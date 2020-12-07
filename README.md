@@ -7,9 +7,9 @@ A batteries-included template for [Cloudflare Workers](https://workers.cloudflar
 * [Typescript](https://www.typescriptlang.org/) for typechecking.
 * [Jest](https://jestjs.io/) for testing.
 * [Sass](https://sass-lang.com/) for CSS preprocessing and minification.
-* Static files are served using [Cloudflare Sites](https://developers.cloudflare.com/workers/platform/sites).
+* Static files are served using [Workers Sites](https://developers.cloudflare.com/workers/platform/sites).
 
-If you disagree with any of these choices it should be easy to remove that decision.
+If you disagree with any of these choices it should be possible to swap out that decision.
 
 ## 🚀 Getting started
 
