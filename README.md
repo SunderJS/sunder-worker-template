@@ -3,7 +3,7 @@
 A batteries-included template for [Cloudflare Workers](https://workers.cloudflare.com) with the following configuration:
 
 * The [Sunder](https://sunderjs.com) minimal web framework.
-* [ESBuild](https://esbuild.github.io/) for builds in <50ms.
+* [ESBuild](https://esbuild.github.io/) for builds in <50ms (through [Estrella](https://github.com/rsms/estrella).
 * [Typescript](https://www.typescriptlang.org/) for typechecking.
 * [Jest](https://jestjs.io/) for testing.
 * [Sass](https://sass-lang.com/) for CSS preprocessing and minification.
