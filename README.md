@@ -3,7 +3,7 @@
 A batteries-included template for [Cloudflare Workers](https://workers.cloudflare.com) with the following configuration:
 
 * The [Sunder](https://sunderjs.com) minimal web framework.
-* [ESBuild](https://esbuild.github.io/) for builds in <50ms (through [Estrella](https://github.com/rsms/estrella).
+* [ESBuild](https://esbuild.github.io/) for builds in <50ms (through [Estrella](https://github.com/rsms/estrella)).
 * [Typescript](https://www.typescriptlang.org/) for typechecking.
 * [Jest](https://jestjs.io/) for testing.
 * [Sass](https://sass-lang.com/) for CSS preprocessing and minification.
@@ -20,6 +20,11 @@ Press the green *"Use this template"* button in the top right to make a Github r
 To watch changes and build as you go, use 
 ```
 npm run watch
+```
+
+To make a production build use
+```
+npm run build
 ```
 
 ### Testing
