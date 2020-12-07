@@ -1,10 +1,12 @@
+# Enter your zone id and account id, then rename this file to wrangler.toml.
+# Consider removing wrangler.toml from the .gitignore file
+
 type = "javascript"
 name = "{{ project-name }}"
 account_id = ""
 workers_dev = true
 zone_id = ""
 webpack_config = "webpack.config.js"
-
 
 [site]
 entry-point = "./"

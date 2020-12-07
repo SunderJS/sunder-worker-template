@@ -45,6 +45,6 @@ This is the recommended way to develop most of your app. Write tests for core fu
 wrangler dev
 ```
 
-This is best combined with `npm run watch` in another terminal so the build gets updated automatically.
+This is best combined with `npm run watch` in another terminal so the build gets updated automatically. Please make sure to call `npm run watch` first.
 
 To publish, first make a build using `npm run build` and then use the Wrangler CLI tool.
