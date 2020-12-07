@@ -1,6 +1,6 @@
 # sunder-worker-template
 
-A batteries-included template for [Cloudflare Workers](https://workers.cloudflare.com) with the following modern configuration:
+A batteries-included template for [Cloudflare Workers](https://workers.cloudflare.com) with the following configuration:
 
 * The [Sunder](https://sunderjs.com) minimal web framework.
 * [ESBuild](https://esbuild.github.io/) for builds in <50ms.
@@ -8,6 +8,8 @@ A batteries-included template for [Cloudflare Workers](https://workers.cloudflar
 * [Jest](https://jestjs.io/) for testing.
 * [Sass](https://sass-lang.com/) for CSS preprocessing and minification.
 * Static files are served using [Cloudflare Sites](https://developers.cloudflare.com/workers/platform/sites).
+
+If you disagree with any of these choices it should be easy to remove that decision.
 
 ## 🚀 Getting started
 
