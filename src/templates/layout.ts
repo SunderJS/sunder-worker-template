@@ -23,7 +23,7 @@ export function basicLayout(htmlTemplateData: HTMLTemplateData): HTMLTemplateDat
         <footer>
             <p>
             <a href="/">{{ project-name }}</a>
-            | <a href="https://sunderjs.com/documentation">Sunder Documentation</a>
+            | <a href="https://sunderjs.com/docs">Sunder Documentation</a>
             | <a href="https://github.com/gzuidhof/sunder-worker-template">Template readme</a></p>
         </footer>`
 
