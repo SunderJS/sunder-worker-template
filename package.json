@@ -32,6 +32,6 @@
     },
     "dependencies": {
         "@cloudflare/kv-asset-handler": "^0.1.0",
-        "sunder": "^0.6.0"
+        "sunder": "^0.7.2"
     }
 }
