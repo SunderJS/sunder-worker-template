@@ -16,7 +16,7 @@ async function buildStyles(config) {
   try {
     await writeFile(cssTargetFile, result.css)
     console.log(chalk.greenBright(`Wrote ${cssTargetFile}`))
-  } catch(e) {
+  } catch (e) {
     console.warn(chalk.yellow(`Could not write ${cssTargetFile}`))
   }
 
@@ -25,16 +25,20 @@ async function buildStyles(config) {
 
 build({
   entry: "src/index.ts",
-  outfile: "dist/bundle.js",
+  // outfile: "dist/bundle.mjs",
   bundle: true,
+  outdir: "dist",
+  minify: false,
+  external: ["__STATIC_CONTENT_MANIFEST"],
+  outExtension: { ".js": ".mjs" },
   onStart: async (config, changedFiles, context) => {
     const isInitialBuild = changedFiles.length === 0;
     if (isInitialBuild) {
 
       try {
         await remove("dist");
-        await copy("static", "dist/static", {recursive: true});
-      } catch(e) {
+        await copy("static", "dist/static", { recursive: true });
+      } catch (e) {
         console.warn(chalk.yellow("Could not remove existing dist folder and copy static assets (maybe you are running wrangler dev?)"))
       }
 

@@ -1,8 +1,9 @@
 import { Router } from "sunder";
+import { Env } from "./env";
 import { homeHandler } from "./handlers/home";
 import { serveStaticAssetsFromKV } from "./middleware/static";
 
-export function registerRoutes(router: Router) {
+export function registerRoutes(router: Router<Env>) {
     router.get("/", homeHandler);
 
     router.get("/static/:assetPath+", serveStaticAssetsFromKV())

@@ -8,7 +8,7 @@ import { basicLayout } from "../templates/layout";
  * 
  * This must be placed before the `renderErrorsAsJSON` middleware. Perhaps that's counter-intuitive, but errors get caught in reverse order.
  */
-export async function renderErrorsAsHTML(ctx: Context<{ assetPath: string }>, next: MiddlewareNextFunction) {
+export async function renderErrorsAsHTML(ctx: Context<{}, { assetPath: string }>, next: MiddlewareNextFunction) {
     try {
         await next();
     } catch (e) {

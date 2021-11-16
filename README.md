@@ -5,11 +5,11 @@ A batteries-included template for [Cloudflare Workers](https://workers.cloudflar
 * The [Sunder](https://sunderjs.com) minimal web framework.
 * [ESBuild](https://esbuild.github.io/) for builds in <50ms (through [Estrella](https://github.com/rsms/estrella)).
 * [Typescript](https://www.typescriptlang.org/) for typechecking.
-* [Jest](https://jestjs.io/) for testing.
+* [Miniflare](https://miniflare.dev) and [Jest](https://jestjs.io/) for testing.
 * [Sass](https://sass-lang.com/) for CSS preprocessing and minification.
 * Static files are served using [Workers Sites](https://developers.cloudflare.com/workers/platform/sites).
 
-If you disagree with any of these choices it should be possible to swap out that decision.
+If you disagree with any of these choices it's easy to swap out that decision.
 
 ## 🚀 Getting started
 

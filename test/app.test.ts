@@ -1,7 +1,7 @@
 import { createApp } from "../src/app";
 
 function createEvent(request: Request) {
-    return new FetchEvent("fetch", { request });
+    return new Event("fetch", { request } as any) as FetchEvent;
 }
 
 describe("App integration tests", () => {
