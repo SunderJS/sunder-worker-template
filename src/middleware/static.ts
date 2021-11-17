@@ -1,5 +1,5 @@
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
-import { getAssetFromKV, Options } from "@cloudflare/kv-asset-handler/src/index";
+import { getAssetFromKV, Options } from "@cloudflare/kv-asset-handler";
 import { Context, MiddlewareNextFunction } from "sunder";
 import { Env } from '@/env';
 

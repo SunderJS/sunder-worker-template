@@ -18,7 +18,8 @@
         },
         "declaration": true,
         "noEmit": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "noEmitHelpers": true
     },
     "include": [
         "src/**/*",

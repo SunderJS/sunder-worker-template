@@ -6,12 +6,12 @@
     "type": "module",
     "scripts": {
         "build": "node build.js -sourcemap",
+        "miniflare": "miniflare",
         "watch": "node build.js -watch -sourcemap -debug",
-        "build:test": "cd test && tsc && node --experimental-vm-modules ../node_modules/jest/bin/jest.js",
-        "test": "npm run build -- test && node --experimental-vm-modules ../node_modules/jest/bin/jest.js",
+        "test": "cd test && tsc && cd .. && node --experimental-vm-modules node_modules/jest/bin/jest.js",
         "types:check": "tsc --noEmit && tsc --noEmit -p test/tsconfig.json"
     },
-    "main": "dist/worker.js",
+    "main": "dist/index.mjs",
     "devDependencies": {
         "@cloudflare/workers-types": "^3.1.1",
         "@popeindustries/lit-html-server": "^3.1.0",
@@ -24,18 +24,16 @@
         "estrella": "^1.2.10",
         "fs-extra": "^9.0.1",
         "jest": "^27.3.1",
-        "jest-config": "^27.3.1",
         "jest-environment-miniflare": "^2.0.0-rc.1",
-        "jest-util": "^27.3.1",
         "miniflare": "^2.0.0-rc.1",
         "node-fetch": "^2.6.1",
         "sass": "^1.43.4",
         "typescript": "^4.4.4"
     },
     "dependencies": {
-        "@cloudflare/kv-asset-handler": "git+https://github.com/cloudflare/kv-asset-handler",
+        "@cloudflare/kv-asset-handler": "^0.2.0",
         "@lit-labs/ssr": "^1.0.0",
         "lit": "^2.0.2",
-        "sunder": "^0.9.2"
+        "sunder": "^0.9.4"
     }
 }
