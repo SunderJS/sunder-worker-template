@@ -1,8 +1,9 @@
 import { Router } from "sunder";
+import { Env } from "./bindings";
 import { homeHandler } from "./handlers/home";
 import { serveStaticAssetsFromKV } from "./middleware/static";
 
-export function registerRoutes(router: Router) {
+export function registerRoutes(router: Router<Env>) {
     router.get("/", homeHandler);
 
     router.get("/static/:assetPath+", serveStaticAssetsFromKV())
@@ -10,7 +11,7 @@ export function registerRoutes(router: Router) {
 
     // Example inline route with a named parameter
     router.get("/hello/:name", ({ response, params }) => {
-        response.body = `Hello ${params.name}`;
+        response.body = `Hello ${params.name}!`;
     });
 
     router.get("/robots.txt", (ctx) => {

@@ -1,32 +1,28 @@
 {
     "compilerOptions": {
-        "outDir": "./dist",
-        "module": "esnext",
         "target": "esnext",
+        "module": "esnext",
         "lib": [
-            "WebWorker",
-            "ESNext"
+            "esnext"
         ],
         "types": [
-            "jest",
-            "types-cloudflare-worker/global",
+            "@cloudflare/workers-types"
         ],
         "moduleResolution": "node",
-        "alwaysStrict": true,
         "strict": true,
-        "preserveConstEnums": true,
-        "forceConsistentCasingInFileNames": true,
-        "sourceMap": true,
-        "esModuleInterop": true,
-        "allowJs": true
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "declaration": true,
+        "noEmit": true,
+        "skipLibCheck": true,
+        "noEmitHelpers": true
     },
     "include": [
-        "./src/**/*.ts",
-        "./test/**/*.ts",
-        "./node_modules/types-cloudflare-worker/global.d.ts",
-    ],
-    "exclude": [
-        "node_modules/",
-        "dist/"
+        "src/**/*",
+        "bindings.d.ts"
     ]
 }

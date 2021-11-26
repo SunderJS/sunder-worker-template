@@ -1,15 +1,10 @@
-module.exports = {
-    preset: 'ts-jest',
-    testEnvironment: 'node',
-    setupFiles: ["<rootDir>/test/setup.ts"],
-    transform: {
-        '.+\\.(jt)s?$': 'ts-jest',
-        '.*': 'ts-jest'
-    },
-    modulePathIgnorePatterns: [
-        "<rootDir>/dist"
-    ],
-    transformIgnorePatterns: [
-        "node_modules/(?!(sunder)/)" // Sunder has ES Module exports which Jest doesn't understand
-    ]
-}
+export default {
+    testEnvironment: "miniflare",
+    testMatch: ["<rootDir>/test/build/test/*\.test\.js"],
+    // transformIgnorePatterns: [
+    //     "<rootDir>/node_modules/(?!(sunder)/)" // Sunder has ES Module exports which Jest doesn't understand
+    // ],
+    moduleNameMapper: {
+        "__STATIC_CONTENT_MANIFEST": "<rootDir>/test/build/test/manifest.js"
+    }
+};

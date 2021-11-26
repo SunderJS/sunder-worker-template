@@ -3,35 +3,36 @@
     "version": "0.1.0",
     "private": true,
     "description": "A starter template for Sunder applications on Cloudflare Workers",
+    "type": "module",
     "scripts": {
-        "build": "node build.js -sourcemap",
-        "watch": "node build.js -watch -sourcemap -debug",
-        "test": "jest",
-        "prepublishOnly": "npm i && npm run build && npm t"
+        "build": "rimraf dist && node build.js -sourcemap",
+        "build:nocleanup": "node build.js -sourcemap",
+        "miniflare": "miniflare",
+        "watch": "rimraf dist && miniflare --watch",
+        "test": "cd test && tsc && cd .. && node --experimental-vm-modules node_modules/jest/bin/jest.js",
+        "types:check": "tsc --noEmit && tsc --noEmit -p test/tsconfig.json"
     },
-    "main": "dist/worker.js",
+    "main": "dist/index.mjs",
     "devDependencies": {
-        "@popeindustries/lit-html-server": "^3.1.0",
-        "@types/node": "^14.14.10",
-        "@types/node-fetch": "^2.5.7",
-        "@udacity/types-service-worker-mock": "^1.2.0",
+        "@cloudflare/workers-types": "^3.1.1",
+        "@types/jest": "^27.0.2",
+        "@types/mime": "^2.0.3",
+        "@types/node": "^16.11.7",
         "chalk": "^4.1.0",
         "cloudflare-worker-mock": "^1.2.0",
         "esbuild": "^0.8.18",
         "estrella": "^1.2.10",
-        "file-loader": "^6.2.0",
-        "formdata-node": "^2.4.0",
         "fs-extra": "^9.0.1",
-        "jest": "^26.6.3",
-        "node-fetch": "^2.6.1",
-        "null-loader": "^4.0.1",
-        "sass": "^1.30.0",
-        "ts-jest": "^26.4.4",
-        "types-cloudflare-worker": "^1.2.0",
-        "typescript": "^4.1.2"
+        "jest": "^27.3.1",
+        "jest-environment-miniflare": "^2.0.0-rc.2",
+        "miniflare": "^2.0.0-rc.1",
+        "rimraf": "^3.0.2",
+        "sass": "^1.43.4",
+        "typescript": "^4.4.4"
     },
     "dependencies": {
-        "@cloudflare/kv-asset-handler": "^0.1.0",
-        "sunder": "^0.7.2"
+        "@cloudflare/kv-asset-handler": "^0.2.0",
+        "@popeindustries/lit-html-server": "^3.1.0",
+        "sunder": "^0.10.0"
     }
 }

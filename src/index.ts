@@ -1,13 +1,10 @@
 import { createApp } from "./app";
 
-declare let DEBUG: boolean;
-// DEBUG = true;
-
 const app = createApp();
 
-addEventListener('fetch', (event) => {
-    const fetchEvent = event as FetchEvent;
-    const response = app.handle(fetchEvent);
 
-    fetchEvent.respondWith(response);
-});
+export default {
+  async fetch(request: Request, env: any, ctx: any) {
+    return app.fetch(request, env, ctx)
+  }
+}

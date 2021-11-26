@@ -1,22 +1,23 @@
+import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import { getAssetFromKV, Options } from "@cloudflare/kv-asset-handler";
 import { Context, MiddlewareNextFunction } from "sunder";
+import { Env } from '@/bindings';
 
 export function serveStaticAssetsFromKV(options: Partial<Options> = {}) {
-    return async function (ctx: Context<{ assetPath: string }>, next: MiddlewareNextFunction) {
+    const manifest = JSON.parse(manifestJSON);
+    options.ASSET_MANIFEST = manifest;
+        
+    return async function (ctx: Context<Env, { assetPath: string }>, next: MiddlewareNextFunction) {
+        options.ASSET_NAMESPACE = ctx.env.__STATIC_CONTENT;
         try {
             const resp = await getAssetFromKV(
                 (ctx as any).event,
                 {
-                    mapRequestToAsset: req => new Request(ctx.url.origin + "/" + ctx.params.assetPath, req),
+                    mapRequestToAsset: (req: Request) => new Request(ctx.url.origin + "/" + ctx.params.assetPath, req),
                     ...options
                 }
             );
-            if (resp.body !== null) {
-                ctx.response.body = resp.body;
-            };
-            ctx.response.headers = resp.headers;
-            ctx.response.status = resp.status;
-            ctx.response.statusText = resp.statusText;
+            ctx.response.overwrite(resp, {mergeHeaders: true});
         } catch (e) {
             let pathname = ctx.url.pathname;
             ctx.throw(404, `${pathname} not found`);
