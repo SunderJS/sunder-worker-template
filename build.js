@@ -26,7 +26,6 @@ async function buildStyles(config) {
   } catch (e) {
     console.warn(chalk.yellow(`Could not write ${cssTargetFile}`))
   }
-
   return result.stats.includedFiles;
 }
 
@@ -43,7 +42,6 @@ build({
     if (isInitialBuild) {
 
       try {
-        await remove("dist");
         await copy("static", "dist/static", { recursive: true });
       } catch (e) {
         console.warn(chalk.yellow("Could not remove existing dist folder and copy static assets (maybe you are running wrangler dev?)"))

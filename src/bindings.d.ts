@@ -5,3 +5,8 @@ export interface Env {
     /** Add your bindings (Durable Objects, KV, etc. here) */
     // MY_DURABLE_OBJECT: DurableObjectNamespace
 }
+
+declare module '__STATIC_CONTENT_MANIFEST' {
+  const manifest: string
+  export default manifest
+}

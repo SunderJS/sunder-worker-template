@@ -1,7 +1,7 @@
 import manifestJSON from '__STATIC_CONTENT_MANIFEST';
 import { getAssetFromKV, Options } from "@cloudflare/kv-asset-handler";
 import { Context, MiddlewareNextFunction } from "sunder";
-import { Env } from '@/env';
+import { Env } from '@/bindings';
 
 export function serveStaticAssetsFromKV(options: Partial<Options> = {}) {
     const manifest = JSON.parse(manifestJSON);

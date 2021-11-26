@@ -5,16 +5,16 @@
     "description": "A starter template for Sunder applications on Cloudflare Workers",
     "type": "module",
     "scripts": {
-        "build": "node build.js -sourcemap",
+        "build": "rimraf dist && node build.js -sourcemap",
+        "build:nocleanup": "node build.js -sourcemap",
         "miniflare": "miniflare",
-        "watch": "node build.js -watch -sourcemap -debug",
+        "watch": "rimraf dist && miniflare --watch",
         "test": "cd test && tsc && cd .. && node --experimental-vm-modules node_modules/jest/bin/jest.js",
         "types:check": "tsc --noEmit && tsc --noEmit -p test/tsconfig.json"
     },
     "main": "dist/index.mjs",
     "devDependencies": {
         "@cloudflare/workers-types": "^3.1.1",
-        "@popeindustries/lit-html-server": "^3.1.0",
         "@types/jest": "^27.0.2",
         "@types/mime": "^2.0.3",
         "@types/node": "^16.11.7",
@@ -24,16 +24,15 @@
         "estrella": "^1.2.10",
         "fs-extra": "^9.0.1",
         "jest": "^27.3.1",
-        "jest-environment-miniflare": "^2.0.0-rc.1",
+        "jest-environment-miniflare": "^2.0.0-rc.2",
         "miniflare": "^2.0.0-rc.1",
-        "node-fetch": "^2.6.1",
+        "rimraf": "^3.0.2",
         "sass": "^1.43.4",
         "typescript": "^4.4.4"
     },
     "dependencies": {
         "@cloudflare/kv-asset-handler": "^0.2.0",
-        "@lit-labs/ssr": "^1.0.0",
-        "lit": "^2.0.2",
-        "sunder": "^0.9.4"
+        "@popeindustries/lit-html-server": "^3.1.0",
+        "sunder": "^0.10.0"
     }
 }
