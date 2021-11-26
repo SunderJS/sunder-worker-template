@@ -1,4 +1,4 @@
-# sunder-worker-template
+# 🌄 sunder-worker-template
 
 A batteries-included template for [Cloudflare Workers](https://workers.cloudflare.com) with the following configuration:
 
