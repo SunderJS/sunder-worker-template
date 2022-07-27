@@ -5,8 +5,9 @@
         "lib": [
             "esnext"
         ],
-        "types": [
-            "@cloudflare/workers-types"
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules/@cloudflare/workers-types"
         ],
         "moduleResolution": "node",
         "strict": true,
