@@ -1,20 +1,9 @@
 # Enter your zone id and account id, then rename this file to wrangler.toml.
 # Consider removing wrangler.toml from the .gitignore file
 compatibility_date = "2021-11-25"
-
-type = "javascript"
-name = "{{ project-name }}"
-account_id = ""
-workers_dev = true
-zone_id = ""
-
-[site]
-entry-point = "./"
-bucket = "./dist/static"
+name = "project-name"
+main = "src/index.ts"
 
 [build]
 command = "npm run build:nocleanup"
 
-[build.upload]
-format = "modules"
-main = "index.mjs"
