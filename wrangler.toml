@@ -2,7 +2,6 @@
 # Consider removing wrangler.toml from the .gitignore file
 compatibility_date = "2021-11-25"
 name = "project-name"
-workers_dev = true
 main = "src/index.ts"
 
 [build]
